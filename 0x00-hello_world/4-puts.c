@@ -3,7 +3,6 @@
  * main - A C program to print using puts and is followed by A new line
  *
  * Return: Always 0(Success)
- *
  */
 int main(void)
 {
