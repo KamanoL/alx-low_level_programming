@@ -10,5 +10,5 @@
 int main(void)
 {
 	puts("\"Programming is like buiding a multiligual puzzle");
-		return (0);
+	return (0);
 }
