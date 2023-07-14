@@ -5,15 +5,15 @@
 */
 int main(void)
 {
-	int t = 65;
-	int c = 97;
+	int t = 97;
+	int c = 65;
 
-	while (t <= 90)
+	while (t <= 122)
 	{
 		putchar(t);
 		t++;
 	}
-	while (c <= 122)
+	while (c <= 90)
 	{
 		putchar(c);
 		c++;
