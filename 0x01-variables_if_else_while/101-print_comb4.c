@@ -3,6 +3,7 @@
  * main - posible combination of numbers
  * Return: Always 0 (Success)
 */
+
 int main(void)
 {
 	int t;
