@@ -24,8 +24,10 @@ int main(void)
 					putchar(c);
 					putchar(l);
 					if (t == 55 && c == 56 && l == 57)
+					{
 
 						break;
+					}
 
 					putchar(',');
 					putchar(' ');
