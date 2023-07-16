@@ -7,8 +7,8 @@
 int main(void)
 {
 	int a = '0';
-	int k = '0';
-	int t = '0';
+	int k = '1';
+	int t = '2';
 
 	while (a <= '7')
 		{
@@ -21,7 +21,6 @@ int main(void)
 					putchar('a');
 					putchar('k');
 					putchar('t');
-					
 					if (!(a == '7' && k == '8' && t == '9'))
 					{
 						putchar(',');
@@ -30,10 +29,10 @@ int main(void)
 					}
 					t++;
 				}
-				t = '0';
+				t = '2';
 				k++;
 			}
-			k = '0';
+			k = '1';
 			a++;
 		}
 		putchar('\n');
