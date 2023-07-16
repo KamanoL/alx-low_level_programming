@@ -1,9 +1,8 @@
 #include <stdio.h>
 /**
-* main - Entry point
-*Return: Always 0 (Success)
-*/
-
+ * main - Entry point
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	int a = '0';
@@ -11,30 +10,32 @@ int main(void)
 	int t = '0';
 
 	while (a <= '7')
-		{
+	{
 		while (k <= '8')
-			{
+		{
 			while (t <= '9')
-				{
+			{
 				if (a < k && k < t)
-					{
-					putchar('0');
-					putchar('1');
-					putchar('2');
+				{
+					putchar(a);
+					putchar(k);
+					putchar(t);
+
 					if (!(a == '7' && k == '8' && t == '9'))
 					{
 						putchar(',');
 						putchar(' ');
 					}
-					}
-					t++;
 				}
-				t = '0';
-				k++;
+				t++;
 			}
-			k = '0';
-			a++;
+			t = '0';
+			k++;
 		}
-		putchar('\n');
-		return (0);
+		k = '0';
+		a++;
+	}
+
+	putchar('\n');
+	return (0);
 }
