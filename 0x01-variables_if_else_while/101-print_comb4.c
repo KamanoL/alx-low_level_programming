@@ -10,11 +10,11 @@ int main(void)
 	int k = '0';
 	int t = '0';
 
-	while (a <= '7', a++)
+	while (a <= '7')
 		{
-		while (k <= '8', k++)
+		while (k <= '8')
 			{
-			while (t <= '9', t++)
+			while (t <= '9')
 				{
 				if (a < k && k < t && a < t)
 					{
@@ -27,8 +27,13 @@ int main(void)
 						putchar(' ');
 					}
 					}
+					t++;
 				}
+				t = '0';
+				k++;
 			}
+			k = '0';
+			a++;
 		}
 		putchar('\n');
 		return (0);
