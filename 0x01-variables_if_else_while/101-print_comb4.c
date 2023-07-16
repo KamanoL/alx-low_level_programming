@@ -18,9 +18,9 @@ int main(void)
 				{
 				if (a < k && k < t && a < t)
 					{
-					putchar('0');
-					putchar('1');
-					putchar('2');
+					putchar('a');
+					putchar('k');
+					putchar('t');
 					if (!(a == '7' && k == '8' && t == '9'))
 					{
 						putchar(',');
