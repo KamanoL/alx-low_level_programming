@@ -1,38 +1,41 @@
 #include <stdio.h>
 /**
- * main - posible combination of numbers
- * Return: Always 0 (Success)
+* main - Entry point
+*Return: Always 0 (Success)
 */
 
 int main(void)
 {
-	int t;
-	int c;
-	int l;
+	int a = '0';
+	int k = '0';
+	int t = '0';
 
-	for (t = 48; t < 58; t++)
-	{
-		for (c = 48; c < 58; c++)
+	while (a <= '7')
 		{
-			if (c > t)
+		while (k <= '8')
 			{
-				for (l = 48; l < 58; l++)
+			while (t <= '9')
 				{
-					if (l > t)
+				if (a < k && k < t)
 					{
-					putchar(t);
-					putchar(c);
-					putchar(l);
-					if (!(t == 55 && c == 56 && l == 57))
+					putchar('a');
+					putchar('k');
+					putchar('t');
+					
+					if (!(a == '7' && k == '8' && t == '9'))
 					{
-					putchar(',');
-					putchar(' ');
+						putchar(',');
+						putchar(' ');
 					}
 					}
+					t++;
 				}
+				t = '0';
+				k++;
 			}
+			k = '0';
+			a++;
 		}
-	}
-	putchar('\n');
-	return (0);
+		putchar('\n');
+		return (0);
 }
