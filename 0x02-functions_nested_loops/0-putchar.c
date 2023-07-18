@@ -1,14 +1,24 @@
-#include <main.h>
+#include "main.h"
+
+/* Function prototype */
+void _putchar(char c);
+
 /**
  * main - prints _putchar
- * writen by less
- * Return: Alwaysb 0
+ * written by less
+ * Return: Always 0
  */
-
 int main(void)
 {
-	_putchar("_");
-	_putchar("ptchar");
-		_putchar('\n');
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+
 	return (0);
 }
