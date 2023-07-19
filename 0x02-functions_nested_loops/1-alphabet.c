@@ -5,7 +5,7 @@
  * Prints alphabets in lower case
  * Return: 0
  */
-int main(void)
+void _putchar(void)
 {
 	int a = 97;
 
