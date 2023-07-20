@@ -8,8 +8,5 @@
 
 int mul(int a, int b)
 {
-	while (a * b = c)
-	{
-		return (0);
-	}
+	return (a * b);
 }
