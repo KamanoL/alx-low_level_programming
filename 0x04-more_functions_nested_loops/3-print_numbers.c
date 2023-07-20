@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * print_numbers - prints charecters and or digits like (0 to 9).
- * @a: a - variable
+ * print_numbers - prints charecters and or digits like (0 to 9)
  * Return: 0 always set
  */
 
@@ -12,7 +11,7 @@ void print_numbers(void)
 
 	for (a = 0; a <= 9; a++)
 	{
-	_putchar(a);
+		_putchar(a);
 	}
 
 	_putchar('\n');
