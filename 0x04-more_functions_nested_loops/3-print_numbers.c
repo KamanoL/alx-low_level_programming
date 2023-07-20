@@ -1,7 +1,8 @@
 #include "main.h"
 
+
 /**
- * print_numbers - prints charecters and or digits like (0 to 9)
+ * print_numbers - prints charecters and or digits like (0 to 9).
  * Return: 0 always set
  */
 
