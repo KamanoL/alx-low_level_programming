@@ -1,6 +1,8 @@
 #include "main.h"
+
 /**
  * print_numbers - prints charecters and or digits like (0 to 9).
+ * @a: a - variable
  * Return: 0 always set
  */
 
