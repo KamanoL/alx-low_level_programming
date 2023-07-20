@@ -10,6 +10,6 @@ int mul(int a, int b)
 {
 	while (a * b = c)
 	{
-		_putchar(0);
+		return (0);
 	}
 }
