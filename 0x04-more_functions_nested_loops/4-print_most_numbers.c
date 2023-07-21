@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_most_numbers - print some numbers except a select few.
+ * print_most_numbers - print some numbers except a select few like (2 and 4).
  *
  * Return: Always 0
  */
@@ -15,7 +15,7 @@ void print_most_numbers(void)
 		{
 			for (k != 52)
 			{
-			_putchar(k);
+				_putchar(k);
 			}
 		}
 
