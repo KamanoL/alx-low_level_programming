@@ -3,9 +3,8 @@
 /**
  * print_most_numbers - print some numbers except a select few.
  *
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
-
 void print_most_numbers(void)
 {
 	int k;
