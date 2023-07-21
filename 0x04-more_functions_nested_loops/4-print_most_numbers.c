@@ -15,7 +15,8 @@ void print_most_numbers(void)
 		for (!(k = 50; k = 52))
 		{
 			_putchar(k);
-			_puchar('\n');
 		}
+
 	}
+	_putchar('\n');
 }
