@@ -3,22 +3,18 @@
 /**
  * print_most_numbers - print some numbers except a select few like (2 and 4).
  *
- * Return: Always 0
+ * Return: void
  */
 void print_most_numbers(void)
 {
 	char k;
 
-	for (k = 48; k <= 57; k++)
+	for (k = '0'; k <= '9'; k++)
 	{
-		for (k != 50)
+		if (k != '2' && k != '4')
 		{
-			for (k != 52)
-			{
-				_putchar(k);
-			}
+		_putchar(k);
 		}
-
 	}
 	_putchar('\n');
 }
