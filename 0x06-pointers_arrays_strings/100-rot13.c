@@ -18,7 +18,7 @@ char *rot13(char *n)
 
 	for (l = 0; n[l] != '\0'; l++)
 	{
-		for (k = 0; k < 52; k++)
+		for (k = 0; k < 53; k++)
 		{
 			if (n[l] == datarot[k])
 			{
