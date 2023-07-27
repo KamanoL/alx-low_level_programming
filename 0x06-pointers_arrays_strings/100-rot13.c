@@ -20,9 +20,9 @@ char *rot13(char *n)
 	{
 		for (k = 0; k < 53; k++)
 		{
-			if (n[l] == datarot[k])
+			if (n[l] == data1[k])
 			{
-				n[l] = data1[k];
+				n[l] = datarot[k];
 				break;
 			}
 		}
