@@ -12,9 +12,9 @@
 char *rot13(char *n)
 {
 	int l, k;
-	char data1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char data1[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	char datarot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char datarot[] = "noprstuvwxyzabcdefghjklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (l = 0; n[l] != '\0'; l++)
 	{
