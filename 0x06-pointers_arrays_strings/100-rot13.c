@@ -23,11 +23,11 @@ char *rot13(char *n)
 		     'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
 		     'M'};
 
-	for (l = 0; n[l] != '\0'; l++)
+		for (l = 0; n[l] != '\0'; l++)
 	{
 		for (k = 0; k < 53; k++)
 		{
-			if (n[l] == data1[k])
+			if (data1[k] == n[l])
 			{
 				n[l] = datarot[k];
 				break;
