@@ -1,38 +1,34 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * rot13 - encodes a string
- * @n: pointer to string
- * @data1: result
- * @datarot: result
- * Return: *n
- */
-
-char *rot13(char *n)
+*rot13 - encodes a string using rot13.
+*@s: string to be analyzed
+*Return: pointer to encoded string
+*/
+char *rot13(char *s)
 {
-	int l, k;
-	char data1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+	int stringCount, rotation;
+	char r1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 		     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
 		     'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
 		     'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
 		     'Z'};
-	char datarot[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+	char r2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
 		     'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 		     'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
 		     'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
 		     'M'};
 
-		for (l = 0; n[l] != '\0'; l++)
+	for (stringCount = 0; s[stringCount] != '\0'; stringCount++)
 	{
-		for (k = 0; k < 53; k++)
+		for (rotation = 0; rotation < 53; rotation++)
 		{
-			if (data1[k] == n[l])
+			if (r1[rotation] == s[stringCount])
 			{
-				n[l] = datarot[k];
+				s[stringCount] = r2[rotation];
 				break;
 			}
 		}
 	}
-	return (n);
+	return (s);
 }
