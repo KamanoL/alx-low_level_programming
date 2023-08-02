@@ -10,9 +10,9 @@ int actual_prime(int n, int b);
 
 int is_prime_number(int n)
 {
-	if (n < 0)
-		return (-1);
-	return (actual_prime(n, n - 1));
+	if (n <= 1)
+		return (0);
+	return (actual_prime(n, 2));
 }
 
 /**
@@ -24,9 +24,9 @@ int is_prime_number(int n)
 
 int actual_prime(int n, int b)
 {
-	if (b == 0)
+	if (b == n)
 		return (1);
-	if (n % b == 0 && b > 0)
+	if (n % b == 0)
 		return (0);
-	return (actual_prime(n, b - 1));
+	return (actual_prime(n, b + 1));
 }
