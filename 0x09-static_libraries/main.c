@@ -1,8 +1,0 @@
-#include "main.h"
-
-int main(void)
-{
-    printf("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
-    printf("\n");
-    return (0);
-}
