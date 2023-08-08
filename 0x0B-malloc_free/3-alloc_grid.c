@@ -27,10 +27,12 @@ int **alloc_grid(int width, int height)
 
 		for (t--; t >= 0; t--)
 		{
+
 			free(array[t]);
 			free(array);
 			return (NULL);
 		}
+
 	}
 
 	{
