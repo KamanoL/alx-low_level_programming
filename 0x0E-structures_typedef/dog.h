@@ -1,32 +1,26 @@
 #ifndef DOG_H
 #define DOG_H
-#include <stdio.h>
 
 /**
- * struct User - structure for the user to insert charecters
- * @name: name of object/animal
- * @age: age of the animal
- * @owner: name of the owner
+ * struct dog - initialize viariable of type dog struct
+ * @name: name to be initialized
+ * @age: age to be initialized
+ * @owner: owner to initialize
  */
 
-typedef struct User
+struct dog
 {
-	char name;
-	float age;
-	char owner;
-} User;
+	char = name;
+	float = age;
+	char = owner;
 
-/**
- * main - entry point
- * Return: 0 (Success)
- */
-
-int main(void)
-{
-	struct User user;
-	User user2;
-
-	return (0);
-}
+};
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
+dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
+void print_dog(struct dog *d);
+void *_strcpy(char *dest, char *src);
+int strlen(char *s);
 
 #endif
