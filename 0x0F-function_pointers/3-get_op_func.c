@@ -12,14 +12,14 @@ int(*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
-		{"*", op_mul},
 		{"-", op_sub},
+		{"*", op_mul},
 		{"/", op_div},
 		{"%", op_mod},
 		{NULL, NULL},
 	};
 
-	int a = 0;
+	int i = 0;
 
 	while (ops[a].op != NULL && *(ops[a].op) != *s)
 		a++;
