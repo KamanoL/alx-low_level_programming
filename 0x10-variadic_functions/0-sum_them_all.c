@@ -5,7 +5,7 @@
  * sum_them_all - adds all the parameters
  * @n: number of parameters passed on function
  * @...: variable number of parameters
- * Return: if n == 0  return 0
+ * Return: if n == 0 - 0, else sum of calculation
  */
 
 int sum_them_all(const unsigned int n, ...)
@@ -23,6 +23,4 @@ int sum_them_all(const unsigned int n, ...)
 
 	return (sum);
 
-	if (n == 0)
-		return (0);
 }
