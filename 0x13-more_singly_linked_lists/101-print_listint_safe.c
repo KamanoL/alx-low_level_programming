@@ -45,7 +45,7 @@ size_t loop_listint_len(const listint_t *head)
 		car = car->next;
 		bus = (bus->next)->next;
 	}
-	return (98);
+	return (0);
 }
 
 /**
