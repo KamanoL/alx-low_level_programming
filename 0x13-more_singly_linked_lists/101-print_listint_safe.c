@@ -45,7 +45,7 @@ size_t loop_listint_len(const listint_t *head)
 		car = car->next;
 		bus = (bus->next)->next;
 	}
-	return (0);
+	return (98);
 }
 
 /**
@@ -77,7 +77,7 @@ size_t print_listint_safe(const listint_t *head)
 			head = head->next;
 		}
 
-	printf("->[%p] %d\n", (void *)head, head->n);
+	printf("[%p] %d\n", (void *)head, head->n);
 	}
 	return (node);
 }
