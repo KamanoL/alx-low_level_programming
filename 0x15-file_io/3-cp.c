@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	buff = creat_buff(argv[2]);
+	buff = creat_buff(argv[1]);
 	from = open(argv[1], O_RDONLY);
 	a = read(from, buff, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -93,8 +93,8 @@ int main(int argc, char *argv[])
 	} while (a > 0);
 
 	free(buff);
-	close(from);
-	close(to);
+	end_file(from);
+	end_file(to);
 
 	return (0);
 }
