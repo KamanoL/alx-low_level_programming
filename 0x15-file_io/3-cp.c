@@ -1,9 +1,10 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <sys/stat.h>
 
 char *creat_buff(char *file);
-void end_file(int dd);
+void end_file(int fd);
 
 /**
  * creat_buff - allocates bytes
@@ -21,7 +22,7 @@ char *creat_buff(char *file)
 	if (buff == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
-		exit(99);
+		exit(97);
 	}
 
 	return (buff);
@@ -29,21 +30,21 @@ char *creat_buff(char *file)
 
 /**
  * end_file - ends file
- * @dd: file description
+ * @fd: file description
  *
  * Return: None
  */
 
-void end_file(int dd)
+void end_file(int fd)
 {
 	int a;
 
-	a = close(dd);
+	a = close(fd);
 
 	if (a == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close dd %d\n", dd);
-		exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close dd %d\n", fd);
+		exit(98);
 	}
 }
 
@@ -56,7 +57,7 @@ void end_file(int dd)
 
 int main(int argc, char *argv[])
 {
-	int to, frm, a, t;
+	int to, from, a, t;
 	char *buff;
 
 	if (argc != 3)
@@ -66,12 +67,12 @@ int main(int argc, char *argv[])
 	}
 
 	buff = creat_buff(argv[2]);
-	frm = open(argv[1], O_RDONLY);
-	a = read(frm, buff, 1024);
+	from = open(argv[1], O_RDONLY);
+	a = read(from, buff, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (frm == -1 || a == -1)
+		if (from == -1 || a == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buff);
@@ -86,13 +87,13 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		a = read(frm, buff, 1024);
+		a = read(from, buff, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (a > 0);
 
 	free(buff);
-	close(frm);
+	close(from);
 	close(to);
 
 	return (0);
