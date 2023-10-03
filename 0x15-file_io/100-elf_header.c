@@ -16,7 +16,7 @@ int strn_cmp(const char *s1, const char *s2, size_t a)
 {
 	for ( ; a && *s1 && *s2; --a, ++s1, ++s2)
 	{
-		if (*s1 != *s)
+		if (*s1 != *s2)
 			return (*s1 - *s2);
 	}
 	if (a)
@@ -133,7 +133,7 @@ void elf_version(const unsigned char *buff)
 	printf("  %-34s %u", "Version:", buff[EI_VERSION]);
 
 	if (buff[EI_VERSION] == EV_CURRENT)
-		printf(" (current)\n")
+		printf(" (current)\n");
 	else
 		printf("\n");
 }
