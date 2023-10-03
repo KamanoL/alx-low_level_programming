@@ -8,18 +8,18 @@
  * _strncmp - checks different strings
  * @s1: first string
  * @s2: second string
- * @t: max number of bytes
+ * @n: max number of bytes
  *
  * Return: 0 if s1 and s2 are equal, else non-zero
  */
-int _strncmp(const char *s1, const char *s2, size_t t)
+int _strncmp(const char *s1, const char *s2, size_t n)
 {
-    for ( ; t && *s1 && *s2; --t, ++s1, ++s2)
+    for ( ; n && *s1 && *s2; --n, ++s1, ++s2)
     {
         if (*s1 != *s2)
             return (*s1 - *s2);
     }
-    if (t)
+    if (n)
     {
         if (*s1)
             return (1);
@@ -47,9 +47,9 @@ void _close(int fd)
  * @buff: buffer
  * @count: number of bytes
  */
-void _read(int fd, char *buf, size_t count)
+void _read(int fd, char *buff, size_t count)
 {
-    if (read(fd, buf, count) != -1)
+    if (read(fd, buff, count) != -1)
         return;
     write(STDERR_FILENO, "Error: Can't read from file\n", 28);
     _close(fd);
@@ -144,7 +144,7 @@ void elf_version(const unsigned char *buffer)
  */
 void elf_osabi(const unsigned char *buffer)
 {
-    const char *_table[19] = {
+    const char *os_table[19] = {
         "UNIX - System V",
         "UNIX - HP-UX",
         "UNIX - NetBSD",
@@ -169,7 +169,7 @@ void elf_osabi(const unsigned char *buffer)
     printf("  %-34s ", "OS/ABI:");
 
     if (buffer[EI_OSABI] < 19)
-        printf("%s\n", _table[(unsigned int) buffer[EI_OSABI]]);
+        printf("%s\n", os_table[(unsigned int) buffer[EI_OSABI]]);
     else
         printf("<unknown: %x>\n", buffer[EI_OSABI]);
 }
@@ -190,7 +190,7 @@ void elf_abivers(const unsigned char *buffer)
  */
 void elf_type(const unsigned char *buffer, int big_endian)
 {
-    char *typ_table[5] = {
+    char *type_table[5] = {
         "NONE (No file type)",
         "REL (Relocatable file)",
         "EXEC (Executable file)",
@@ -207,7 +207,7 @@ void elf_type(const unsigned char *buffer, int big_endian)
         type = 0x100 * buffer[17] + buffer[16];
 
     if (type < 5)
-        printf("%s\n", typ_table[type]);
+        printf("%s\n", type_table[type]);
     else if (type >= ET_LOOS && type <= ET_HIOS)
         printf("OS Specific: (%4x)\n", type);
     else if (type >= ET_LOPROC && type <= ET_HIPROC)
@@ -224,30 +224,30 @@ void elf_type(const unsigned char *buffer, int big_endian)
  */
 void elf_entry(const unsigned char *buffer, size_t bit_mode, int big_endian)
 {
-    int addres_size = bit_mode / 8;
+    int address_size = bit_mode / 8;
 
     printf("  %-34s 0x", "Entry point address:");
 
     if (big_endian)
     {
-        while (addres_size && !*(buffer))
-            --addres_size, ++buffer;
+        while (address_size && !*(buffer))
+            --address_size, ++buffer;
 
         printf("%x", *buffer & 0xff);
 
-        while (--addres_size > 0)
+        while (--address_size > 0)
             printf("%02x", *(++buffer) & 0xff);
     }
     else
     {
-        buffer += addres_size;
+        buffer += address_size;
 
-        while (addres_size && !*(--buffer))
-            --addres_size;
+        while (address_size && !*(--buffer))
+            --address_size;
 
         printf("%x", *buffer & 0xff);
 
-        while (--addres_size > 0)
+        while (--address_size > 0)
             printf("%02x", *(--buffer) & 0xff);
     }
 
