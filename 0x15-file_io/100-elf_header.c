@@ -77,12 +77,12 @@ void elf_magic(const unsigned char *buff)
 }
 
 /**
- * _elfclass - returns elf class
+ * elf_class - returns elf class
  * @buff: elf header
  *
  * Return: bit mode (32 or 64)
  */
-size_t _elfclass(const unsigned char *buff)
+size_t elf_class(const unsigned char *buff)
 {
     printf("  %-34s ", "Class:");
 
@@ -217,12 +217,12 @@ void elf_type(const unsigned char *buff, int big_endian)
 }
 
 /**
- * elf_ent - shows entry point address
+ * elf_entry - shows entry point address
  * @buff: string to entry point
  * @bit_mode: bit mode
  * @big_endian: endianness
  */
-void elf_ent(const unsigned char *buff, size_t bit_mode, int big_endian)
+void elf_entry(const unsigned char *buff, size_t bit_mode, int big_endian)
 {
     int address_size = bit_mode / 8;
 
@@ -284,7 +284,7 @@ int main(int argc, const char *argv[])
     _read(fd, (char *) buff, 18);
 
     elf_magic(buff);
-    bit_mode = _elfclass(buff);
+    bit_mode = elf_class(buff);
     big_endian = elf_data(buff);
     elf_version(buff);
     elf_osabi(buff);
@@ -294,7 +294,7 @@ int main(int argc, const char *argv[])
     lseek(fd, 24, SEEK_SET);
     _read(fd, (char *) buff, bit_mode / 8);
 
-    elf_ent(buff, bit_mode, big_endian);
+    elf_entry(buff, bit_mode, big_endian);
 
     _close(fd);
 
